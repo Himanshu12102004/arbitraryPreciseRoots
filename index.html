@@ -3,25 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PrecisionPro</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>Made by Himanshu Gupta</nav>
-    <div id="wait">Calculating Please Wait ...</div>
-    <div class="text">
-      Enter the number of which you want to alculate the square root
+    <nav>PrecisionPro</nav>
+    <div id="discription">
+      <div id="question">What is PrecisionPro?</div>
+      <div id="forWhat">
+        PrecisionPro by Himanshu Gupta is an exponent calculator that calculates
+        the power of a given base and exponent, providing any specified
+        precision. It employs the Newton-Raphson method to compute roots
+        accurately, accommodating real numbers, negative, positive, and
+        decimals. Precision settings can range from 100 digits to thousands,
+        limited by the device it runs on.
+      </div>
     </div>
+    <div id="wait">Calculating Please Wait ...</div>
+    <div class="text">Enter the base</div>
     <input id="number" type="number" placeholder="Enter a number" />
     <br />
-    <div class="text" style="margin-top: 20px">
-      Enter the fractional power by which you want to raise the number
-    </div>
+    <div class="text" style="margin-top: 20px">Enter the exponent</div>
     <span class="parent">
       <div id="oneBy">1</div>
       <input id="pow" type="number" placeholder="Enter a real number " />
     </span>
-    <div class="text" style="margin-top: 20px">Number of Decimal places</div>
+    <div class="text" style="margin-top: 20px">
+      Enter the number of Decimal places you want
+    </div>
     <input
       id="decimal"
       type="number"
@@ -31,6 +40,7 @@
     <br />
     <button id="submit">Calculate</button>
     <br />
+
     <div id="answerBox">
       <p id="answer"></p>
     </div>
