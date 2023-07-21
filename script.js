@@ -19,7 +19,7 @@ function calulateRoot() {
   if (parseFloat(presentNo.toString()) % 1 === 0) {
     answer.innerHTML =
       `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
-      presentNo.toFixed(decimalDigits).toString(); // Update the final value in the DOM
+      presentNo.toFixed(decimalDigits).toString();
     wait.style.display = "none";
     document.body.style.overflow = "auto";
 
@@ -27,10 +27,8 @@ function calulateRoot() {
   }
   let one = new Decimal(1);
   Decimal.set({ precision: decimalDigits + 1 });
-  console.log(presentNo.toString());
 
   function performIteration(i) {
-    console.log(i);
     let powMinusOne = myPower.minus(one);
     let reciprocalOfPower = one.div(myPower);
     let raisedToPower = presentNo.pow(powMinusOne);
@@ -38,25 +36,23 @@ function calulateRoot() {
     let product = powMinusOne.times(presentNo);
     let sum = product.plus(fraction);
     previousNo = presentNo;
-    console.log(previousNo.toString());
     presentNo = reciprocalOfPower.times(sum);
     answer.innerHTML =
       `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
-      presentNo.toString(); // Update the final value in the DOM
+      presentNo.toString();
 
     if (checkThePlace(previousNo.toString(), presentNo.toString())) {
-      setTimeout(() => performIteration(i + 1), 0); // Execute the next iteration asynchronously after a short delay
+      setTimeout(() => performIteration(i + 1), 0);
     } else {
       wait.style.display = "none";
       document.body.style.overflow = "auto";
-      console.log(presentNo.toString()); // Output the final value of presentNo
       answer.innerHTML =
         `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
-        presentNo.toString(); // Update the final value in the DOM
+        presentNo.toString();
     }
   }
 
-  performIteration(0); // Start the loop
+  performIteration(0);
 }
 
 document.getElementById("submit").addEventListener("click", calulateRoot);
