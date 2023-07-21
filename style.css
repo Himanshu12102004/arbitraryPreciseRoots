@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+}
+* {
+  padding: 0;
+  font-size: 20px;
+  margin: 0;
+  font-family: monospace;
+}
+input {
+  height: 2rem;
+  width: 15rem;
+  background-color: black;
+  border: 1px solid #74ee15;
+  color: #74ee15;
+  margin: 5px;
+  padding: 3px;
+}
+#answer {
+  color: white;
+}
+.cursor {
+  display: inline-block;
+  animation: blinkCursor 0.7s infinite;
+  color: white;
+}
+/* Add styles to handle overflow */
+
+@keyframes blinkCursor {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black;
+  }
+}
+/* Add styles to handle overflow */
+#answer {
+  width: 100%;
+  /* white-space: nowrap;
+  overflow-x: initial; */
+
+  word-wrap: break-word;
+  margin: 10px 10px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 15px; /* Adjust this value as per your preference */
+}
+#submit {
+  background-color: #ffe700;
+  margin: 5px;
+  padding: 5px;
+}
+.text {
+  padding: 5px;
+  color: #ffe700;
+}
+#answer {
+  color: #74ee15;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
