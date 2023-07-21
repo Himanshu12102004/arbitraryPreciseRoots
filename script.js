@@ -29,6 +29,7 @@ function calulateRoot() {
   Decimal.set({ precision: decimalDigits + 1 });
 
   function performIteration(i) {
+    console.log(i);
     let powMinusOne = myPower.minus(one);
     let reciprocalOfPower = one.div(myPower);
     let raisedToPower = presentNo.pow(powMinusOne);
