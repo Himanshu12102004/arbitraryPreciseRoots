@@ -106,6 +106,15 @@ sup {
   input {
     margin: 5px;
   }
+  nav {
+    font-size: 25px;
+  }
+  #question {
+    font-size: 20px;
+  }
+  #forWhat {
+    font-size: 17px;
+  }
 }
 nav {
   position: sticky;
