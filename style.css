@@ -80,14 +80,14 @@ sup {
 #wait {
   display: none;
   justify-content: center;
-  align-items: center;
+  align-items: first baseline;
   position: absolute;
   z-index: 30;
   text-align: center;
   color: #fff;
   top: 0;
   left: 0;
-  background-color: rgba(69, 69, 69, 0.6);
+  background-color: rgba(69, 69, 69, 0.8);
   height: 2000vh;
   width: 100vw;
   font-size: 30px;
