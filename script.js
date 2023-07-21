@@ -1,19 +1,32 @@
 const answer = document.getElementById("answer");
-answer.style.maxWidth = innerWidth - 100 + "px";
+const wait = document.getElementById("wait");
+answer.style.maxWidth = innerWidth - 30 + "px";
 function checkThePlace(a, b) {
   return a !== b;
 }
-
 function calulateRoot() {
+  answer.style.display = "block";
+
+  document.body.style.overflow = "hidden";
+  wait.style.display = "flex";
   let previousNo = "";
   const n = document.getElementById("number").value;
   let myNo = new Decimal(n);
   const pow = document.getElementById("pow").value;
   let myPower = new Decimal(pow);
-  let presentNo = new Decimal(Math.pow(n, 1 / pow));
   const decimalDigits = parseInt(document.getElementById("decimal").value);
+  let presentNo = new Decimal(Math.pow(n, 1 / pow));
+  if (parseFloat(presentNo.toString()) % 1 === 0) {
+    answer.innerHTML =
+      `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
+      presentNo.toFixed(decimalDigits).toString(); // Update the final value in the DOM
+    wait.style.display = "none";
+    document.body.style.overflow = "auto";
+
+    return;
+  }
   let one = new Decimal(1);
-  Decimal.set({ precision: decimalDigits });
+  Decimal.set({ precision: decimalDigits + 1 });
   console.log(presentNo.toString());
 
   function performIteration(i) {
@@ -27,13 +40,19 @@ function calulateRoot() {
     previousNo = presentNo;
     console.log(previousNo.toString());
     presentNo = reciprocalOfPower.times(sum);
-    answer.innerHTML = presentNo.toString();
+    answer.innerHTML =
+      `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
+      presentNo.toString(); // Update the final value in the DOM
 
     if (checkThePlace(previousNo.toString(), presentNo.toString())) {
       setTimeout(() => performIteration(i + 1), 0); // Execute the next iteration asynchronously after a short delay
     } else {
+      wait.style.display = "none";
+      document.body.style.overflow = "auto";
       console.log(presentNo.toString()); // Output the final value of presentNo
-      answer.innerHTML = "Your Answer=<br>" + presentNo.toString(); // Update the final value in the DOM
+      answer.innerHTML =
+        `<div style="color:#ffe700;display:inline-block">Your Answer for ${n}<sup style="font-size:10px">1/${pow}</sup>=</div>` +
+        presentNo.toString(); // Update the final value in the DOM
     }
   }
 

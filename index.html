@@ -7,23 +7,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="wait">Calculating Please Wait ...</div>
     <div class="text">
       Enter the number of which you want to alculate the square root
     </div>
     <input id="number" type="number" placeholder="Enter a number" />
     <br />
     <div class="text" style="margin-top: 30px">
-      Enter the power to which you want to raise the number
+      Enter the fractional power by which you want to raise the number
     </div>
-    <input
-      id="pow"
-      type="number"
-      placeholder="Enter the number of decimal places"
-    />
-
-    <div class="text" style="margin-top: 30px">
-      Enter the number of decimal places you want
-    </div>
+    <span class="parent">
+      <div id="oneBy">1</div>
+      <input id="pow" type="number" placeholder="Enter a real number " />
+    </span>
+    <div class="text" style="margin-top: 30px">Number of Decimal places</div>
     <input
       id="decimal"
       type="number"
@@ -33,7 +30,9 @@
     <br />
     <button id="submit">Calculate</button>
     <br />
-    <p id="answer"></p>
+    <div id="answerBox">
+      <p id="answer"></p>
+    </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/decimal.js@10.2.1/decimal.min.js"></script>
   <script src="script.js"></script>

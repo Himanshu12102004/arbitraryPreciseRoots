@@ -3,9 +3,11 @@ body {
 }
 * {
   padding: 0;
-  font-size: 20px;
+  margin: 10px;
+  font-size: 18px;
   margin: 0;
   font-family: monospace;
+  box-sizing: border-box;
 }
 input {
   height: 2rem;
@@ -17,6 +19,7 @@ input {
   padding: 3px;
 }
 #answer {
+  display: none;
   color: white;
 }
 .cursor {
@@ -42,7 +45,7 @@ input {
   overflow-x: initial; */
 
   word-wrap: break-word;
-  margin: 10px 10px;
+  margin: 10px 5px;
 }
 
 .cursor {
@@ -62,4 +65,56 @@ input {
   color: #74ee15;
   letter-spacing: 1px;
   line-height: 1.2;
+  border: solid #74ee15 1px;
+  padding: 10px;
+}
+#pow {
+  background-color: black;
+  margin: 0;
+}
+#oneBy {
+  color: #74ee15;
+  font-size: 50px;
+  border-bottom: solid 2px #ffe;
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: fit-content;
+  justify-items: center;
+}
+sup {
+  font-size: 10;
+}
+
+#wait {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 30;
+  text-align: center;
+  color: #fff;
+  top: 0;
+  left: 0;
+  background-color: rgba(69, 69, 69, 0.6);
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+}
+@media only screen and (max-width: 700px) {
+  * {
+    font-size: 10px;
+  }
+  #oneBy {
+    font-size: 20px;
+  }
+  #wait {
+    font-size: 20px;
+  }
 }
