@@ -107,13 +107,13 @@ sup {
     margin: 5px;
   }
   nav {
-    font-size: 25px;
-  }
-  #question {
     font-size: 20px;
   }
-  #forWhat {
+  #question {
     font-size: 17px;
+  }
+  #forWhat {
+    font-size: 15px;
   }
 }
 nav {
@@ -136,4 +136,8 @@ nav {
   font-size: 25px;
   color: #fff;
   margin: 20px 5px;
+}
+li {
+  list-style-type: disc;
+  margin: 4px 0;
 }
