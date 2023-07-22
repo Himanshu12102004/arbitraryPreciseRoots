@@ -88,7 +88,7 @@ sup {
   top: 0;
   left: 0;
   background-color: rgba(69, 69, 69, 0.8);
-  height: 200vh;
+  height: 100vh;
   width: 100vw;
   font-size: 30px;
 }
@@ -131,6 +131,9 @@ nav {
   color: white;
   margin: 20px 5px;
   max-width: 500px;
+  height: 0px;
+  overflow: hidden;
+  transition: height 3s linear;
 }
 #question {
   font-size: 25px;
@@ -140,4 +143,28 @@ nav {
 li {
   list-style-type: disc;
   margin: 4px 0;
+}
+/* General styles */
+.accordian {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#question {
+  font-weight: bold;
+}
+
+/* Styles for the content that will expand */
+#forWhat {
+  max-height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease; /* Add a transition for smooth effect */
+}
+
+/* Hover styles */
+
+.accordian:hover > #forWhat {
+  height: 300px; /* Set the desired expanded height */
+  transform: scaleY(1);
 }
